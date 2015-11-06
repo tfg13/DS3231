@@ -14,7 +14,7 @@
 #ifndef DS3231_h
 #define DS3231_h
 
-#include <WProgram.h>
+#include <Arduino.h>
 #include <Wire.h>
 
 class DS3231 {
