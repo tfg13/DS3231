@@ -514,6 +514,13 @@ void DS3231::enableOscillator(bool TF, bool battery, byte frequency) {
 	writeControlByte(temp_buffer, 0);
 }
 
+void DS3231::reconfigureForAlarms() {
+	// configure everything to work with alarms.
+	// clock always on, alarms active, square wave off
+	writeControlByte(0b00000100, 0);
+	writeControlByte(0b00000000, 1);
+}
+
 void DS3231::enable32kHz(bool TF) {
 	// turn 32kHz pin on or off
 	byte temp_buffer = readControlByte(1);

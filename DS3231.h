@@ -111,6 +111,8 @@ class DS3231 {
 			// Checks whether the indicated alarm (1 or 2, 2 default);
 			// has been activated.
 
+		void reconfigureForAlarms();
+
 		// Oscillator functions
 
 		void enableOscillator(bool TF, bool battery, byte frequency); 
