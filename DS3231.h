@@ -132,14 +132,15 @@ class DS3231 {
 			// giving you the correct time.
 			// The OSF is cleared by function setSecond();.
 
+                byte readControlByte(bool which);
+			// Read selected control byte: (0); reads 0x0e, (1) reads 0x0f
+
 	private:
 
 		byte decToBcd(byte val); 
 			// Convert normal decimal numbers to binary coded decimal
 		byte bcdToDec(byte val); 
 			// Convert binary coded decimal to normal decimal numbers
-		byte readControlByte(bool which); 
-			// Read selected control byte: (0); reads 0x0e, (1) reads 0x0f
 		void writeControlByte(byte control, bool which); 
 			// Write the selected control byte. 
 			// which == false -> 0x0e, true->0x0f.
